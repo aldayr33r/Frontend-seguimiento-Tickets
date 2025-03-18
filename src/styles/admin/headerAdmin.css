@@ -1,0 +1,282 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    background: white;
+    z-index: 1000;
+  }
+  
+  .nombreAvatar {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 1px;
+    color: #000;
+  }
+  
+  .logo_left {
+    width: 120px;
+    height: 100px;
+  }
+  
+  .logo_right {
+    width: 81px;
+    height: 111px;
+  }
+  
+  
+  .sidebar {
+    width: 280px;
+    background: #e5e8f1;
+    color: #010035;
+    position: fixed;
+    left: 0;
+    top: 100px; 
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  
+  .user-info {
+    text-align: center;
+    margin-top: 10px;
+    padding: 0px;
+    width: 100%;
+  }
+  
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  
+  .sidebar-menuA {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .sidebar-menuA li {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    padding: 10px;
+    padding-bottom: 10px;
+    background: #e5e8f1;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center; 
+  }
+  
+  .sidebar-menuA li:hover {
+    background: #d9dce6;
+  }
+  
+  
+  .sidebar-menuA img {
+    width: 35px;
+    height: 35px; 
+    margin-bottom: 8px; 
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
+  }
+  
+  
+  .sidebar-menuA a {
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+  .sidebar-menuA a:hover {
+    color: inherit;
+  }
+  .sidebar-menuA li:last-child {
+    margin-top: 12px; 
+  }
+  
+  
+  @media screen and (max-width: 1155px) {
+    .sidebar {
+      width: 280px;
+    }
+  
+    .header h1 {
+      font-size: 38px;
+    }
+  
+    .logo_left {
+      width: 100px;
+      height: 85px;
+    }
+  
+    .logo_right {
+      width: 70px;
+      height: 95px;
+    }
+  }
+  
+  
+  @media screen and (max-width: 955px) {
+    .sidebar {
+      width: 220px;
+    }
+  
+    .header h1 {
+      font-size: 34px;
+    }
+  
+    .logo_left {
+      width: 90px;
+      height: 75px;
+    }
+  
+    .logo_right {
+      width: 60px;
+      height: 85px;
+    }
+  
+    .user-avatar {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .sidebar-menuA li {
+      padding: 15px;
+      font-size: 14px;
+    }
+  }
+  
+  
+  @media screen and (max-width: 855px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .header h1 {
+      font-size: 30px;
+    }
+  
+    .logo_left {
+      width: 80px;
+      height: 65px;
+    }
+  
+    .logo_right {
+      width: 55px;
+      height: 75px;
+    }
+  
+    .user-avatar {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .sidebar-menuA li {
+      padding: 12px;
+      font-size: 13px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 110px;
+    }
+  
+    .header {
+      height: 80px;
+    }
+  
+    .header h1 {
+      font-size: 24px;
+    }
+  
+    .logo_left {
+      width: 60px;
+      height: 50px;
+    }
+  
+    .logo_right {
+      width: 45px;
+      height: 60px;
+    }
+  
+    .user-avatar {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .sidebar-menuA li {
+      padding: 10px;
+      font-size: 12px;
+    }
+  
+    .sidebar-menuA img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .sidebar-menuA li:last-child {
+      margin-top: 20px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 110px;
+    }
+  
+    .header {
+      height: 80px;
+    }
+  
+    .header h1 {
+      font-size: 24px;
+    }
+  
+    .logo_left {
+      width: 60px;
+      height: 50px;
+    }
+  
+    .logo_right {
+      width: 45px;
+      height: 60px;
+    }
+  
+    .user-avatar {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .sidebar-menu li {
+      padding: 10px;
+      font-size: 12px;
+    }
+  
+    .sidebar-menu img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .sidebar-menu li:last-child {
+      margin-top: 10px;
+    }
+  }

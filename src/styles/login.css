@@ -1,0 +1,136 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden; 
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  background: white;
+  z-index: 1000; 
+}
+
+.header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  color: #000;
+}
+
+.logo_left {
+  width: 120px;
+  height: 100px;
+  padding-left: 50px;
+
+}
+.logo_right {
+  width: 81;
+  height: 111px;
+  padding-right: 50px;
+}
+
+
+.login-container {
+  margin-top: 120px; 
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+.login-box {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(52, 158, 207, 0.2);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.login-box h1{
+  color: #000;
+  font-size: xx-large;
+}
+
+
+/* Avatar */
+.login-avatar {
+  margin-bottom: 20px;
+}
+
+.login-avatar img {
+  width: 100px;
+  height: 100px;
+ 
+}
+
+/* Campos de entrada */
+input {
+  width: 100%;
+  color: #000;
+  padding: 12px 2px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: left;
+  background-color: #fff;
+}
+
+/* Botón de iniciar sesión */
+button {
+  width: 70%;
+  padding: 14px;
+  background: #a0c4ff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #80b0ff;
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url("../assets/footer.png") repeat center;
+  background-size: auto;
+}
+

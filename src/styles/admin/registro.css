@@ -1,0 +1,162 @@
+/* Contenedor principal */
+.main-content {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+/* ----- FORMULARIO ----- */
+.content-a {
+    flex-grow: 1;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin-left: 100px; 
+    width: calc(100% - 10px); 
+    height: 100vh; 
+}
+
+/* Caja del formulario */
+.report-box {
+    background: rgb(139, 147, 160);
+    padding: 10px 200px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Título */
+.title {
+    font-size: 40px;
+    margin-bottom: 2px;
+    margin-top: 1px;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos generales para los inputs y select */
+.input-field, 
+.form-control {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: black;
+    background: white;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-field:focus, 
+.form-control:focus {
+    border-color: #dadada;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(141, 162, 185, 0.5);
+}
+
+/* Estilo del botón de enviar */
+.btn-submit {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividad */
+
+@media (max-width: 1059px) {
+    .report-box {
+        padding: 50px 60px;
+        max-width: 700px;
+    }
+    
+    .input-field, .form-control {
+        max-width: 450px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .report-box {
+        padding: 30px 40px;
+        max-width: 500px;
+    }
+
+    .input-field, .form-control {
+        max-width: 350px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 878px) {
+    .content-a {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .report-box {
+        padding: 30px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-a {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .report-box {
+        padding: 20px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .input-field, .form-control {
+        font-size: 14px;
+    }
+}
+
+/* Estilos específicos para pantallas de 468px */
+@media (max-width: 468px) {
+    .report-box {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .input-field, .form-control {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .btn-submit {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
