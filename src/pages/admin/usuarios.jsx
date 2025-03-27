@@ -1,63 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HeaderAdmin from "../../layouts/headerAdmin";
 import Footer from "../../layouts/footer";
 import DataTable from "react-data-table-component";
+import axios from "axios"; 
 import "../../styles/admin/usuarios.css";
 
 const UsuariosPage = () => {
-  const [filtertipoUsuario, setFilterEstado] = useState(""); // Estado para filtrar
+  const [usuarios, setUsuarios] = useState([]); 
+  const [filterTipoUsuario, setFilterTipoUsuario] = useState("");  
+  const [loading, setLoading] = useState(true);  
+
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/usuarios");
+        setUsuarios(response.data.usuarios); 
+      } catch (error) {
+        console.error("Error al obtener los usuarios:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUsuarios();
+  }, []);
 
   const columns = [
     { name: "ID", selector: row => row.id, sortable: true },
     { name: "Nombre", selector: row => row.nombre, sortable: true },
     { name: "Apellidos", selector: row => row.apellidos, sortable: true },
-    { name: "Email", selector: row => row.email, sortable: true },
+    { name: "Email", selector: row => row.correo, sortable: true },
     { name: "Departamento", selector: row => row.departamento, sortable: true },
-    { name: "Tipo De Usuario", selector: row => row.tipoUsuario, sortable: true },
-    { name: "Usuario", selector: row => row.user, sortable: true },
+    { name: "Tipo de Usuario", selector: row => row.tipo_usuario, sortable: true },
+    { name: "Usuario", selector: row => row.usuario, sortable: true },
   ];
 
-  const data = [
-      { id: 1, nombre: "sa", apellido: "Abierto", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto", user: "df" },
-      { id: 2, nombre: "as", apellido: "Cerrado", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "df" },
-      { id: 3, nombre: "s", apellido: "En proceso", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "df" },
-      { id: 4, nombre: "s", apellido: "Abierto", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "d" },
-      { id: 5, nombre: "s", apellido: "Abierto", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "d" },
-      { id: 6, nombre: "s", apellido: "Cerrado", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Cerrado",user: "d" },
-      { id: 7, nombre: "s", apellido: "En proceso", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "df" },
-      { id: 8, nombre: "s", apellido: "Abierto", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Cerrado",user: "f" },
-      { id: 9, nombre: "s", apellido: "Abierto", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "2f" },
-      { id: 10, nombre: "s", apellido: "Abierto", email: "Abierto",  departamento: "Abierto", tipoUsuario: "En proceso",user: "f" },
-      { id: 11, nombre: "s", apellido: "Cerrado", email: "Abierto",  departamento: "Abierto", tipoUsuario: "En proceso",user: "df" },
-      { id: 12, nombre: "s", apellido: "En proceso", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "sd" },
-      { id: 13, nombre: "s", apellido: "Abierto", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "sd" },
-      { id: 14, nombre: "s", apellido: "Abierto", email: "Abierto",  departamento: "Abierto", tipoUsuario: "Abierto",user: "sd" },
-    ];
+  const filteredData = filterTipoUsuario
+    ? usuarios.filter(row => row.tipoUsuario === filterTipoUsuario)
+    : usuarios;
 
-  // Filtrar datos por estado seleccionado
-  const filteredData = filtertipoUsuario
-    ? data.filter(row => row.tipoUsuario === filtertipoUsuario)
-    : data;
+  if (loading) {
+    return <div>Cargando usuarios...</div>;
+  }
 
   return (
     <div className="usuarios">
       <HeaderAdmin />
-
       <main className="content-u">
         <h2 className="titulo_Table">Usuarios</h2>
 
-        {/* Select para filtrar por estado */}
+        {/* Select para filtrar por tipo de usuario */}
         <select
-          value={filtertipoUsuario}
-          onChange={(e) => setFilterEstado(e.target.value)}
+          value={filterTipoUsuario}
+          onChange={(e) => setFilterTipoUsuario(e.target.value)}
           className="filter-select"
         >
           <option value="">Todos</option>
-          <option value="Abierto">Abierto</option>
-          <option value="Cerrado">Cerrado</option>
-          <option value="En proceso">En proceso</option>
+          <option value="Administrador">Administrador</option>
+          <option value="User">User</option>
         </select>
 
+        {/* Tabla con los usuarios */}
         <DataTable
           className="react-data-table"
           columns={columns}
@@ -70,7 +73,6 @@ const UsuariosPage = () => {
           responsive
         />
       </main>
-
       <Footer />
     </div>
   );

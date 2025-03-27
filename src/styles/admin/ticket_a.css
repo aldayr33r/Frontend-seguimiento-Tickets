@@ -1,10 +1,10 @@
-.main-content {
+.main-content-a {
   display: flex;
   flex: 1;
   width: 100%;
 }
 
-.ver-ticket .content {
+.ver-ticket-a .content-a {
   flex-grow: 1;
   margin-top: 100px;
   margin-bottom: 20px;
@@ -22,7 +22,7 @@
  
 }
 
-.ver-ticket .content .titulo_Table {
+.ver-ticket-a .content-a .titulo_Table {
   text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -32,7 +32,7 @@
 }
 
 
-.ver-ticket .content .react-data-table {
+.ver-ticket-a .content-a .react-data-table {
   width: 100%;
   max-width: 850px;
   background: #ffffff;
@@ -42,41 +42,41 @@
  
 }
 
-.ver-ticket .content .react-data-table table {
+.ver-ticket-a .content-a .react-data-table table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.ver-ticket .content .react-data-table th,
-.ver-ticket .content .react-data-table td {
+.ver-ticket-a .content-a .react-data-table th,
+.ver-ticket-a .content-a .react-data-table td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
-.ver-ticket .content .react-data-table th {
+.ver-ticket-a .content-a .react-data-table th {
   background: #007bff;
   color: white;
 }
 
-.ver-ticket .content .react-data-table tbody tr:hover {
+.ver-ticket-a .content-a .react-data-table tbody tr:hover {
   background: #f1f1f1;
 }
 
 
-.ver-ticket .content .react-data-table .id-column {
+.ver-ticket-a .content-a .react-data-table .id-column {
   width: 20px;
   padding: 0%
   
 }
 
-.ver-ticket .content .react-data-table .asunto-column {
+.ver-ticket-a .content-a .react-data-table .asunto-column {
   width: 300px; 
   white-space: normal; 
   word-wrap: break-word; 
 }
 
-.ver-ticket .content .filter-select {
+.ver-ticket-a .content-a .filter-select {
   padding: 5px;
   font-size: 16px;
   border-radius: 5px;
@@ -98,23 +98,23 @@
     height: auto; 
   }
 
-  .ver-ticket .content .titulo_Table {
+  .ver-ticket-a .content-a .titulo_Table {
     font-size: 24px;
   }
 
-  .ver-ticket .content .react-data-table {
+  .ver-ticket-a .content-a .react-data-table {
     padding: 5px 1px;
     width: 100%;
     max-width: 650px;
   }
 
-  .ver-ticket .content .react-data-table th,
-  .ver-ticket .content .react-data-table td {
+  .ver-ticket-a .content-a .react-data-table th,
+  .ver-ticket-a .content-a .react-data-table td {
     padding: 5px;
     font-size: 14px;
   }
 
-  .ver-ticket .content .filter-select {
+  .ver-ticket-a .content-a .filter-select {
     width: 30%; 
   }
 }
@@ -127,107 +127,107 @@
     height: auto; 
   }
 
-  .ver-ticket .content .titulo_Table {
+  .ver-ticket-a .content-a .titulo_Table {
     font-size: 24px;
   }
 
-  .ver-ticket .content .react-data-table {
+  .ver-ticket-a .content-a .react-data-table {
     padding: 5px 1px;
     width: 100%;
     max-width: 450px;
   }
 
-  .ver-ticket .content .react-data-table th,
-  .ver-ticket .content .react-data-table td {
+  .ver-ticket-a .content-a .react-data-table th,
+  .ver-ticket-a .content-a .react-data-table td {
     padding: 5px;
     font-size: 14px;
   }
 
-  .ver-ticket .content .filter-select {
+  .ver-ticket-a .content-a .filter-select {
     width: 30%; 
   }
 }
 
 
 @media screen and (max-width: 1026px) {
-  .ver-ticket .content {
+  .ver-ticket-a .content-a {
     margin-left: 280px;
     width: calc(88% - 200px);
     height: auto; 
   }
 
-  .ver-ticket .content .titulo_Table {
+  .ver-ticket-a .content-a .titulo_Table {
     font-size: 24px;
   }
 
-  .ver-ticket .content .react-data-table {
+  .ver-ticket-a .content-a .react-data-table {
     padding: 5px 1px;
     width: 100%;
     max-width: 450px;
   }
 
-  .ver-ticket .content .react-data-table th,
-  .ver-ticket .content .react-data-table td {
+  .ver-ticket-a .content-a .react-data-table th,
+  .ver-ticket-a .content-a .react-data-table td {
     padding: 5px;
     font-size: 14px;
   }
 
-  .ver-ticket .content .filter-select {
+  .ver-ticket-a .content-a .filter-select {
     width: 30%; 
   }
 }
 
 
 @media screen and (max-width: 855px) {
-  .content {
+  .content-a {
     margin-left: 290px;
     width: calc(88% - 300px);
     height: auto; 
   }
 
-  .titulo_Table {
+  .ver-ticket-a .content-a .titulo_Table {
     font-size: 24px;
   }
 
-  .react-data-table {
+  .ver-ticket-a .content-a .react-data-table {
     padding: 5px 1px;
   }
 
-  .react-data-table th,
-  .react-data-table td {
+  .ver-ticket-a .content-a .react-data-table th,
+  .ver-ticket-a .content-a .react-data-table td {
     padding: px;
     font-size: 14px;
   }
 
-  .filter-select {
+  .ver-ticket-a .content-a .filter-select {
     width: 100%; 
   }
 }
 
 
 @media screen and (max-width: 768px) {
-  .content {
+  .content-a {
     margin-left: 450px;
     margin-right: 50px;
     width: calc(70% - 350px);
     height: auto; 
   }
 
-  .titulo_Table {
+  .ver-ticket-a .content-a .titulo_Table {
     font-size: 24px;
   }
 
-  .react-data-table {
+  .ver-ticket-a .content-a .react-data-table {
     padding: 5px 2px;
   }
 
-  .react-data-table th,
-  .react-data-table td {
+  .ver-ticket-a .content-a .react-data-table th,
+  .ver-ticket-a .content-a .react-data-table td {
     padding: 5px;
     font-size: 14px;
   }
 
-  .filter-select {
+  .ver-ticket-a .content-a .filter-select {
     width: 100%; 
   }
 }

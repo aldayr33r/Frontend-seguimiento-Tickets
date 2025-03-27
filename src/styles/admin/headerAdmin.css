@@ -68,7 +68,7 @@
     list-style: none;
     padding: 0;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 2px;
   }
   
   .sidebar-menuA li {
@@ -110,7 +110,7 @@
     color: inherit;
   }
   .sidebar-menuA li:last-child {
-    margin-top: 12px; 
+    margin-top: 1px; 
   }
   
   

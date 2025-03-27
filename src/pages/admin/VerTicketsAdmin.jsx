@@ -1,47 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../layouts/headerAdmin";
 import Footer from "../../layouts/footer";
 import DataTable from "react-data-table-component";
-import "../../styles/user/user_T.css";
+import axios from "axios"; 
+import "../../styles/admin/ticket_a.css";
 
 const VerTicketAdmin = () => {
-  const [filterEstado, setFilterEstado] = useState(""); // Estado para filtrar
+  const [tickets, setTickets] = useState([]);  
+  const [filterEstado, setFilterEstado] = useState("");  
+  const [loading, setLoading] = useState(true);  
+
+  useEffect(() => {
+    const fetchTickets = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/ver_tickets_admin"); 
+        setTickets(response.data.tickets); 
+      } catch (error) {
+        console.error("Error al obtener los tickets:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTickets();
+  }, []);
+
 
   const columns = [
     { name: "ID", selector: row => row.id, sortable: true },
-    { name: "Título", selector: row => row.titulo, sortable: true },
+    { name: "Usuario", selector: row => row.usuario, sortable: true },
+    { name: "Problema", selector: row => row.asunto, sortable: true },
     { name: "Estado", selector: row => row.estado, sortable: true },
-    { name: "Fecha", selector: row => row.fecha, sortable: true },
+    { name: "Fecha de Inicio", selector: row => row.fecha_inicio, sortable: true },
+    { name: "Fecha de Cierre", selector: row => row.fecha_cierre, sortable: true },
+    { name: "Asignar", sortable: true },
+    { name: "Cerrar", sortable: true },
   ];
 
-  const data = [
-    { id: 1, titulo: "Problema con el sistema", estado: "Abierto", fecha: "2025-03-01" },
-    { id: 2, titulo: "Error en la base de datos", estado: "Cerrado", fecha: "2025-02-25" },
-    { id: 3, titulo: "Fallo en el servidor", estado: "En proceso", fecha: "2025-02-28" },
-    { id: 4, titulo: "Problemas de acceso", estado: "Abierto", fecha: "2025-03-02" },
-    { id: 5, titulo: "Problema con el sistema", estado: "Abierto", fecha: "2025-03-01" },
-    { id: 6, titulo: "Error en la base de datos", estado: "Cerrado", fecha: "2025-02-25" },
-    { id: 7, titulo: "Fallo en el servidor", estado: "En proceso", fecha: "2025-02-28" },
-    { id: 8, titulo: "Problemas de acceso", estado: "Abierto", fecha: "2025-03-02" },
-    { id: 9, titulo: "Problema con el sistema", estado: "Abierto", fecha: "2025-03-01" },
-    { id: 10, titulo: "Problema con el sistema", estado: "Abierto", fecha: "2025-03-01" },
-    { id: 11, titulo: "Error en la base de datos", estado: "Cerrado", fecha: "2025-02-25" },
-    { id: 12, titulo: "Fallo en el servidor", estado: "En proceso", fecha: "2025-02-28" },
-    { id: 13, titulo: "Problemas de acceso", estado: "Abierto", fecha: "2025-03-02" },
-    { id: 14, titulo: "Problema con el sistema", estado: "Abierto", fecha: "2025-03-01" },
-  ];
-
-  // Filtrar datos por estado seleccionado
   const filteredData = filterEstado
-    ? data.filter(row => row.estado === filterEstado)
-    : data;
+    ? tickets.filter(row => row.estado === filterEstado)
+    : tickets;
+
+  if (loading) {
+    return <div>Cargando tickets...</div>;
+  }
 
   return (
-    <div className="ver-ticket">
+    <div className="ver-ticket-a">
       <Header />
-
-      <main className="content">
-        <h2 className="titulo_Table">Tickets Realizados</h2>
+      <main className="content-a">
+        <h2 className="titulo_Table">Todos los Tickets</h2>
 
         {/* Select para filtrar por estado */}
         <select
@@ -50,11 +58,12 @@ const VerTicketAdmin = () => {
           className="filter-select"
         >
           <option value="">Todos</option>
-          <option value="Abierto">Abierto</option>
+          <option value="Pendiente">Pendiente</option>
           <option value="Cerrado">Cerrado</option>
           <option value="En proceso">En proceso</option>
         </select>
 
+        {/* Tabla con los tickets */}
         <DataTable
           className="react-data-table"
           columns={columns}
@@ -67,7 +76,6 @@ const VerTicketAdmin = () => {
           responsive
         />
       </main>
-
       <Footer />
     </div>
   );

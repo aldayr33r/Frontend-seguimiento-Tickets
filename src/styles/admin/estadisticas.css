@@ -1,0 +1,168 @@
+/* Estructura principal */
+.estadisticas-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Contenedor principal de contenido */
+.content {
+  flex: 1;
+  margin-left: 280px;
+  width: calc(98% - 280px);
+  margin-top: 120px;
+  background-color: white;
+  min-height: 10vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título principal */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* Contenedor de estadísticas - cards */
+.estadisticas-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 10px 20px;
+}
+
+/* Tarjetas de estadísticas */
+.stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  font-size: 1 rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-card span {
+  font-size: 2rem;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Colores específicos de tarjetas */
+.orange {
+  background-color: #f39c12;
+}
+
+.gray {
+  background-color: #7f8c8d;
+}
+
+.green {
+  background-color: #16a085;
+}
+
+.red {
+  background-color: #e74c3c;
+}
+
+/* Botones de reporte */
+.reportes-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  gap: 15px;
+}
+
+.boton-reporte {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  background-color: #1148df;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.boton-reporte:hover {
+  background-color: #a3d9fd;
+}
+
+.boton-reporte::before {
+  content: "📊";
+  margin-right: 8px;
+}
+
+/* Select para filtrado */
+.filter-container {
+  margin: 20px;
+}
+
+canvas {
+  height: 250px !important; /* Reducir la altura de la gráfica */
+  width: 100% !important; /* Ajustar al contenedor */
+}
+
+.filter-select {
+  padding: 8px;
+  margin-left: 170px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 180px;
+}
+
+/* Gráfica */
+.chart-container {
+  max-width: 500px;
+  margin: 0 280px 20px;
+  padding: 2px;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .estadisticas-container {
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 15px;
+  }
+  
+  .reportes-container {
+    flex-wrap: wrap;
+  }
+  
+  .boton-reporte {
+    flex-basis: calc(33.33% - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .estadisticas-container {
+    flex-direction: column;
+  }
+  
+  .reportes-container {
+    flex-direction: column;
+  }
+  
+  .boton-reporte {
+    width: 100%;
+  }
+}

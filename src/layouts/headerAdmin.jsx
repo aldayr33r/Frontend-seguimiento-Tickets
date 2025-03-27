@@ -68,7 +68,7 @@ const HeaderAdmin = () => {
       <div className="sidebar">
         <ul className="sidebar-menuA">
         <li className="sidebar-btn">
-            <Link to="/ver-reportes">
+            <Link to="/estadisticas">
               <img src="https://img.icons8.com/external-becris-flat-becris/64/external-statistics-data-science-becris-flat-becris.png" alt="Listar" />
               Estadisticas
             </Link>

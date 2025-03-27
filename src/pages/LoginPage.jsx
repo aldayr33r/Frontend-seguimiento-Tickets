@@ -30,7 +30,6 @@ const LoginPage = () => {
   const [pass, setPass] = useState(""); 
   const navigate = useNavigate();
 
-  // Verificar si el usuario ya tiene una sesión activa
   useEffect(() => {
     const token = localStorage.getItem("token");
   
@@ -51,7 +50,7 @@ const LoginPage = () => {
       });
     }
   }, [navigate]);
-  // Llamar al hook para prevenir retroceder
+
   usePreventBack();
 
   const handleLogin = async (e) => {

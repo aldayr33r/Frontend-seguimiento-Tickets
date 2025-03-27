@@ -9,6 +9,7 @@ import NotFoundPage from "../pages/NotFoundPage";
 import PrivateRoute from '../components/PrivateRoute'; 
 import CrearTicket from "../pages/admin/CrearTicket";
 import VerTicketAdmin from "../pages/admin/VerTicketsAdmin";
+import EstadisticasPage from "../pages/admin/estadisticas";
 
 const AppRouter = () => {
   return (
@@ -26,6 +27,7 @@ const AppRouter = () => {
         <Route path="registro"element={<PrivateRoute requiredRole="Administrador"><RegistroUsuario /></PrivateRoute>} />
         <Route path="reporte_Admin" element={<PrivateRoute requiredRole="Administrador"><CrearTicket /></PrivateRoute>} />
         <Route path="ver-reportes_Admin" element={<PrivateRoute requiredRole="Administrador"><VerTicketAdmin /></PrivateRoute>} />
+        <Route path="estadisticas" element={<PrivateRoute requiredRole="Administrador"><EstadisticasPage /></PrivateRoute>} />
       </Routes>
     </Router>
   );

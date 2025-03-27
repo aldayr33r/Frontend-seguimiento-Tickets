@@ -67,7 +67,7 @@ const Header = () => {
       </div>
 
       {/* SIDEBAR */}
-      <div className="sidebar">
+      <div className="sidebarU">
         <div className="user-info">
           <img src={avatar} alt="Usuario" className="user-avatar" />
           <h2>{userData ? userData.nombre : "Usuario"}</h2>
