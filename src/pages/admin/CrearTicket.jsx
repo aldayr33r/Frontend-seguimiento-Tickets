@@ -24,7 +24,7 @@ const CrearTicket = () => {
     try {
       
       const response = await axios.post(
-        "http://localhost:4000/ticket",  
+        "https://sistema-de-seguimiento-de-tickets.onrender.com/ticket",  
         formData,  
         { withCredentials: true } 
       );

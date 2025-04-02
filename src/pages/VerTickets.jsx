@@ -15,7 +15,7 @@ const AdminPage = () => {
 
     const fetchTickets = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/ver_tickets/${userName}`);
+        const response = await axios.get(`https://sistema-de-seguimiento-de-tickets.onrender.com/ver_tickets/${userName}`);
         setTickets(response.data.tickets); 
         setLoading(false); 
       } catch (error) {

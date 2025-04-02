@@ -13,7 +13,7 @@ const UsuariosPage = () => {
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/usuarios");
+        const response = await axios.get("https://sistema-de-seguimiento-de-tickets.onrender.com/usuarios");
         setUsuarios(response.data.usuarios); 
       } catch (error) {
         console.error("Error al obtener los usuarios:", error);

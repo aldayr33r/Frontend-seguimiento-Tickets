@@ -18,7 +18,7 @@ const EstadisticasPage = () => {
   const [filtro, setFiltro] = useState("todos");
 
   useEffect(() => {
-    axios.get("http://localhost:4000/estadisticas")
+    axios.get("https://sistema-de-seguimiento-de-tickets.onrender.com/estadisticas")
       .then(response => {
         setEstadisticas(response.data);
       })

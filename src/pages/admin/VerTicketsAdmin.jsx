@@ -13,7 +13,7 @@ const VerTicketAdmin = () => {
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/ver_tickets_admin"); 
+        const response = await axios.get("https://sistema-de-seguimiento-de-tickets.onrender.com/ver_tickets_admin"); 
         setTickets(response.data.tickets); 
       } catch (error) {
         console.error("Error al obtener los tickets:", error);
